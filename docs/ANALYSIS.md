@@ -299,9 +299,8 @@ $ curl -s https://api.ipify.org
 Warning UDP yang muncul di log:
 
 ```
-Local IP: 10.11.12.2
 Xray UDP session warning (162.159.192.1:3138): Read timed out
 Xray UDP: QUIC/443 unavailable on server; apps using TCP:443
 ```
 
-`Local IP` adalah alamat `tun0`, bukan error. Warning UDP berasal dari sesi UDP aplikasi klien ke tujuan di range Cloudflare (`162.159.192.0/24`); transport VLESS over WS/TCP pada konfigurasi ini tidak membawa UDP, sehingga sesi tersebut gagal dan Xray fallback ke TCP 443. Dicatat per sesi, tidak memutus tunnel.
+Warning UDP berasal dari sesi UDP aplikasi klien ke tujuan di range Cloudflare (`162.159.192.0/24`); transport VLESS over WS/TCP pada konfigurasi ini tidak membawa UDP, sehingga sesi tersebut gagal dan Xray fallback ke TCP 443. Dicatat per sesi, tidak memutus tunnel.
