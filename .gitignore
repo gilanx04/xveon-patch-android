@@ -1,0 +1,10 @@
+# build artifacts
+build/
+*.apk
+*.jks
+*.keystore
+*.idsig
+
+# python
+__pycache__/
+*.pyc
