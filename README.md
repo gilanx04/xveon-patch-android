@@ -304,6 +304,23 @@ KS=my.jks KS_PASS=secret KEY_PASS=secret bash scripts/build.sh XVeon-9.1-origina
 | Update resmi menimpa patch | Diharapkan | APK ini self-signed. Update dari Play Store/developer akan ditolak sampai versi resmi di-uninstall. |
 | `allowInsecure: true` di config | Diharapkan | Engine XVeon menerima kunci ini; Xray-core resmi menolaknya. Jangan pakai config XVeon di core resmi. |
 
+### Log yang wajar muncul
+
+Contoh log saat tunnel sehat:
+
+```
+Local IP: 10.11.12.2
+
+[09:21:39] Xray UDP session warning (162.159.192.1:3138): Read timed out
+[09:21:40] Xray UDP: QUIC/443 unavailable on server; apps using TCP:443
+```
+
+- `Local IP: 10.11.12.2` — alamat interface `tun0` (sama dengan `VPN CONNECTED (… - 10.11.12.2/30)`). Ini baris status, **bukan warning**.
+- `Xray UDP session warning (162.159.192.1:3138): Read timed out` — satu sesi UDP dari aplikasi klien tidak mendapat balasan. Alamat tujuan berada di range Cloudflare (`162.159.192.0/24`); IP dan port bisa berbeda tergantung aplikasi yang sedang jalan. XVeon mencatatnya **per sesi** dan tidak memutus tunnel.
+- `Xray UDP: QUIC/443 unavailable on server; apps using TCP:443` — fallback otomatis. Transport VLESS di atas WebSocket/TCP pada konfigurasi ini tidak membawa UDP (butuh XUDP/mux), jadi aplikasi yang memakai QUIC/HTTP3 dialihkan ke TCP 443.
+
+Warning UDP bisa berulang tiap beberapa puluh detik selama ada aplikasi yang mencoba UDP. Selama status tetap `CONNECTED` dan `curl` masih membalas `204`/`200`, tunnel tidak bermasalah.
+
 ---
 
 ## Keamanan & catatan
