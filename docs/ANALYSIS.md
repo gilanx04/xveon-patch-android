@@ -6,11 +6,13 @@ Dokumen ini mencatat cara analisis dilakukan, struktur internal kedua aplikasi, 
 
 ## 1. Artefak dan alat
 
-| Artefak | Path | SHA-256 |
+| Artefak | Nama rilis | SHA-256 |
 |---|---|---|
-| XVeon asli | `backup/xveon_original.apk` | `0e15b822f7e150976fd05f0314a569c0f58012f3747efe52bcf97142f1f76167` |
-| XVeon patch | `xveon_patched.apk` | `38e1b686dd5372a49472d04f6a5a69fe42d7882ffd1cb732e6058890c5da9ce4` |
-| LiteVLESS | `litevless.apk` | `29a34f3f481e578a7ddd5d8908bd379a6b6d146bb9dc1ddec20ebdf904681f3a` |
+| XVeon asli | `XVeon-9.1-original.apk` | `0e15b822f7e150976fd05f0314a569c0f58012f3747efe52bcf97142f1f76167` |
+| XVeon patch | `XVeon-9.1-patched.apk` | `38e1b686dd5372a49472d04f6a5a69fe42d7882ffd1cb732e6058890c5da9ce4` |
+| LiteVLESS | `LiteVLESS-1.0.0-reference.apk` | `29a34f3f481e578a7ddd5d8908bd379a6b6d146bb9dc1ddec20ebdf904681f3a` |
+
+Semua artefak tersedia di halaman [Releases](https://github.com/gilanx04/xveon-patch-android/releases/tag/v9.1-patch1).
 
 Alat:
 

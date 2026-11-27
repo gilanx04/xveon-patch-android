@@ -310,6 +310,7 @@ KS=my.jks KS_PASS=secret KEY_PASS=secret bash scripts/build.sh XVeon-9.1-origina
 
 - **Kredensial disensor.** UUID, host WS, dan SNI di dokumentasi ini sebagian ditutup (`****`). Jangan pernah commit config asli ke repo publik.
 - APK original disertakan hanya untuk keperluan backup/diff. Hak cipta tetap milik pembuat XVeon.
+- APK LiteVLESS disertakan hanya sebagai bahan pembanding analisis. Itu build debug (`CN=Android Debug`), bukan rilis resmi, dan hak ciptanya tetap milik pembuat LiteVLESS.
 - APK patch ditandatangani dengan kunci pengembang repo ini, bukan kunci resmi XVeon. Jangan gunakan untuk berpura-pura sebagai rilis resmi.
 - Patch hanya mengubah perilaku verifikasi di sisi klien. Tidak ada traffic yang dikirim ke pihak ketiga, tidak ada telemetri tambahan.
 
@@ -340,6 +341,9 @@ KS=my.jks KS_PASS=secret KEY_PASS=secret bash scripts/build.sh XVeon-9.1-origina
 |---|---|---|
 | `XVeon-9.1-original.apk` | 787 KB | `0e15b822f7e150976fd05f0314a569c0f58012f3747efe52bcf97142f1f76167` |
 | `XVeon-9.1-patched.apk` | 852 KB | `38e1b686dd5372a49472d04f6a5a69fe42d7882ffd1cb732e6058890c5da9ce4` |
+| `LiteVLESS-1.0.0-reference.apk` | 8.3 MB | `29a34f3f481e578a7ddd5d8908bd379a6b6d146bb9dc1ddec20ebdf904681f3a` |
+
+`LiteVLESS-1.0.0-reference.apk` dilampirkan sebagai bahan pembanding untuk [`docs/ANALYSIS.md`](docs/ANALYSIS.md). Aplikasi ini ditandatangani dengan **Android Debug** key (`CN=Android Debug`), jadi ini build debug milik pembuatnya — bukan rilis resmi. Hak cipta tetap milik pembuat LiteVLESS; di repo ini hanya disimpan untuk dokumentasi dan reproduksi analisis.
 
 Signature APK patch:
 
